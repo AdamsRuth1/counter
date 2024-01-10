@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #568391;
+            color: white;
+            
+        }
+        .but{
+            display: flex;
+            margin-top: 50px;
+        }
+        .button{
+            padding: 20px;
+            margin: 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #915681;
+            color: white;
+            cursor: pointer;
+
+        }
+        button:hover{
+            background-color: rgb(34, 33, 33);
+            transition: 1s;
+        }
+        span{
+            margin-top: 20px;
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1 class="counter">Counter</h1>
+    <span id="countshow"></span>
+    <div class="but">
+    <button id="decrease" class="button" onclick="decrease()">DECREASE</button>
+    <button id="Reset"  class="button" onclick="reset()">RESET</button>
+    <button id="increase"  class="button" onclick="increase()">INCREASE</button>
+</div>
+</div>
+<script>
+let count = 0
+let countDisplay = document.getElementById("countshow")
+
+const decrease = () =>{
+    count-- 
+    countDisplay.innerText = count
+    textcolor();
+}
+const reset =() =>{
+    count = 0
+    countDisplay.innerText = count
+    textcolor();
+   
+}
+
+const increase =() =>{
+    count++
+    countDisplay.innerText = count
+    textcolor();
+}
+
+const textcolor =() =>{
+    countDisplay.style.color =  count < 0 ? "red" : "white"
+    textcolor();
+}
+</script>
+</body>
+</html>
